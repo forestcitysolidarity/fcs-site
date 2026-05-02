@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Forest City Solidarity Constitution - Learn how we organize and make decisions together.">
+  <meta name="theme-color" content="#1A1A1A">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Constitution - Forest City Solidarity">
+  <meta property="og:description" content="Learn how Forest City Solidarity organizes and makes decisions together.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fcsolidarity.ca/constitution">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Our Constitution - Forest City Solidarity">
+  <meta name="twitter:description" content="Learn how Forest City Solidarity organizes and makes decisions together.">
+
+  <title>Constitution - Forest City Solidarity</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="images/logo.png" alt="Forest City Solidarity logo" width="50" height="50">
+        <span class="header__logo-text">Forest City Solidarity</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="events.html" class="nav__link">Events</a></li>
+          <li><a href="mayday.html" class="nav__link">May Day</a></li>
+          <li><a href="farhi.html" class="nav__link">Fuck Farhi</a></li>
+          <li><a href="donate.html" class="nav__link">Donate</a></li>
+          <li><a href="https://fcs-qr.vercel.app" class="nav__link" target="_blank" rel="noopener noreferrer">QR</a></li>
+          <li><a href="constitution.html" class="nav__link nav__link--active">Constitution</a></li>
+        </ul>
+        <div class="nav__actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+            <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </button>
+          <a href="/#join" class="btn btn--primary btn--small">Join</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Navigation Toggle -->
+      <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+      <ul class="mobile-nav__list">
+        <li><a href="/" class="mobile-nav__link">Home</a></li>
+        <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+        <li><a href="mayday.html" class="mobile-nav__link">May Day</a></li>
+        <li><a href="farhi.html" class="mobile-nav__link">Fuck Farhi</a></li>
+        <li><a href="donate.html" class="mobile-nav__link">Donate</a></li>
+        <li><a href="https://fcs-qr.vercel.app" class="mobile-nav__link" target="_blank" rel="noopener noreferrer">QR</a></li>
+        <li><a href="constitution.html" class="mobile-nav__link">Constitution</a></li>
+      </ul>
+      <div class="mobile-nav__actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+          <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+          <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </button>
+        <a href="/#join" class="btn btn--primary">Join</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <section class="constitution">
+      <div class="container">
+        <div class="constitution__content">
+          <h1>Our Constitution</h1>
+          <p class="constitution__date">February 2026</p>
+
+          <div class="constitution__body">
+
+            <h2 class="constitution__heading">1. Who We Are</h2>
+            <p>
+              Forest City Solidarity (FCS) is a community-based mutual aid and mutual defence organization which offers active solidarity to individuals and groups under attack from governments, businesses, landlords, the police, and the far right.
+            </p>
+            <p>
+              We seek to build solidarity and collaboration between labour unions, working-class organizations, and community groups in the London area, transforming isolated struggles into a cohesive movement for working-class liberation.
+            </p>
+            <p>
+              Our methods may include resource-sharing, fostering inter-organizational collaboration, direct action, popular education, community-organizing, and rapid-response networking.
+            </p>
+            <p>
+              All members are committed to the pro-feminist, anti-racist, 2SLGBTQI+-positive working-class values of solidarity, democracy, and liberation through collective action. With these values as our starting-point, we work together to oppose capitalism, colonialism, fascism, and all forms of oppression and exploitation.
+            </p>
+            <p>
+              By connecting struggles, sharing resources, and shifting the story from division to solidarity, we build the collective power needed to defend each other, fight back, and win.
+            </p>
+
+            <h2 class="constitution__heading">2. Membership</h2>
+
+            <h3 class="constitution__subheading">a) General Members</h3>
+            <p>
+              FCS welcomes new members. Prospective new members commit to these 5 conditions:
+            </p>
+            <ol class="constitution__list">
+              <li>Expressly indicate support for the group's Who We Are statement above, and acting in ways that are consistent with that support.</li>
+              <li>Agree to pay dues, currently at a sliding scale rate of between $1 and $25 quarterly, determined by the member (normally payable in January, April, July, and October).</li>
+              <li>Treat all members with dignity and respect and refrain from conduct likely to harm FCS.</li>
+              <li>Attend, if able, at least one meeting or event hosted or sponsored by Forest City Solidarity in each quarterly period of the year.</li>
+              <li>Abide by the terms of this Constitution.</li>
+            </ol>
+            <p>
+              Membership commences after a consensus is reached, at a General Meeting of FCS, to accept the application to join.
+            </p>
+
+            <h3 class="constitution__subheading">b) Lapsed Members</h3>
+            <p>
+              Membership may lapse (come to an end, at least for the time being) for a number of reasons, including the following:
+            </p>
+            <ol class="constitution__list">
+              <li>Failure to satisfy the conditions for membership set out above</li>
+              <li>Expressing their decision to leave the group.</li>
+              <li>In exceptional circumstances, membership may lapse due to a temporary suspension or permanent expulsion, based on a disciplinary decision of the group</li>
+            </ol>
+            <p>
+              Decisions on lapsed membership will be taken up by the Coordinating Committee and reviewed by the membership at the next general meeting.
+            </p>
+            <p>
+              Lapsed members will be contacted about their membership status and may be removed from the communication list.
+            </p>
+
+            <h2 class="constitution__heading">3. Coordinating Committee (CC)</h2>
+            <p>
+              The CC is an executive group formed by 3 (or more) elected officers who commit to taking on more responsibilities than General Members - consisting of, at minimum, the Financial Coordinator, Communications Coordinator, and Meeting Coordinator.
+            </p>
+            <p>
+              The CC is elected during the AGM, with replacement elections held as needed. Any member of the CC may be recalled by supermajority vote at a General Meeting.
+            </p>
+            <p>
+              The CC's responsibilities include:
+            </p>
+            <ul class="constitution__list">
+              <li>Coordinate logistics and handle day-to-day operational decisions</li>
+              <li>Manage organizational finances and communications</li>
+              <li>Make time sensitive decisions between General Meetings, which can be reviewed and reversed at the next General Meeting.</li>
+            </ul>
+            <p>
+              Any active member can attend and participate in CC meetings. All decisions within the CC are taken by consensus.
+            </p>
+
+            <h2 class="constitution__heading">4. Meetings and Decisions</h2>
+
+            <h3 class="constitution__subheading">a) Consensus</h3>
+            <p>
+              FCS uses consensus decision-making because it embodies our values of shared power, democratic practice, and collective wisdom.
+            </p>
+            <p>
+              FCS will follow an agreed consensus process, detailed in organizational policies, that ensures inclusive participation and thoughtful decision-making.
+            </p>
+            <p>
+              On time-sensitive issues or deadlocks, as a last resort, a member may propose that the group set aside consensus for that decision and move to a vote instead. Agreeing to set aside consensus requires a supermajority (2/3). If the group agrees, the issue itself is then decided by a separate supermajority vote (2/3).
+            </p>
+
+            <h3 class="constitution__subheading">b) General Meetings</h3>
+            <p>
+              Normally at least once a month, and never less than once per quarter, a General Meeting of the FCS membership must be convened by the CC. Notification of meetings will be sent out at least one week in advance, including the minutes from the last meeting.
+            </p>
+            <p>
+              The General Membership (at General Meetings and the Annual General Meeting) is the supreme decision-making body of FCS, and may override any Coordinating Committee decisions. The General Membership makes decisions about the direction, priorities, activities, organizational values, public positions, and constitutional changes of FCS.
+            </p>
+            <p>
+              Guests may (at the discretion of FCS) be invited to non-public meetings and events, such as AGMs or other events, but would be welcomed only as supportive observers, normally without the right to participate in decision-making for the group.
+            </p>
+            <p>
+              All decisions are made by consensus of members present with a quorum of 1/3 of members in good standing.
+            </p>
+
+            <h3 class="constitution__subheading">c) Annual General Meeting</h3>
+            <p>
+              The CC convenes an Annual General Meeting (AGM) in the first quarter of each year. The AGM is the meeting at which the Coordinating Committee is elected, annual finances are reviewed, constitutional amendments are entertained, and members reflect on the past year and set priorities for the year ahead.
+            </p>
+            <p>
+              All decisions are made by consensus of members present with a quorum of at least 1/3 of members in good standing.
+            </p>
+
+            <h3 class="constitution__subheading">d) Record-Keeping</h3>
+            <p>
+              The CC will ensure that FCS maintains organizational records in accordance with agreed policies to ensure accountability, preserve institutional memory, and assist with onboarding new members.
+            </p>
+
+            <h2 class="constitution__heading">5. Amendments to this Constitution</h2>
+            <p>
+              This Constitution is reviewed at the AGM, at which time amendments may be entertained.
+            </p>
+            <p>
+              For constitutional amendments between AGMs, a notice of motion shall be put out 30 to 60 days in advance, to ensure that the meeting is well-attended. Constitutional amendments can take effect if passed at two consecutive General Meetings.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <p><a href="mailto:forestcitysolidarity@riseup.net">forestcitysolidarity@riseup.net</a></p>
+          <div class="social-links" style="margin-top: 0.5rem;">
+            <a href="https://facebook.com/forestcitysolidarity" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com/forestcitysolidarity" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <p class="footer__tagline">Built with solidarity</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

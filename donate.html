@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Support Forest City Solidarity — mutual aid, direct action, community defence in London, Ontario.">
+  <meta name="theme-color" content="#1A1A1A">
+  <meta property="og:title" content="Donate — Forest City Solidarity">
+  <meta property="og:description" content="Support mutual aid, direct action, and community defence in London, Ontario.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://forestcitysolidarity.xyz/donate.html">
+  <title>Donate — Forest City Solidarity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    /* Donate page styles */
+    .donate-hero {
+      text-align: center;
+      padding: var(--space-3xl) 0 var(--space-xl);
+    }
+    .donate-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: var(--space-sm);
+    }
+    .donate-hero p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+    .donate-hero .red-underline {
+      display: inline-block;
+      border-bottom: 4px solid var(--accent-red);
+      padding-bottom: 0.2rem;
+    }
+
+    /* Frequency toggle */
+    .frequency-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin: var(--space-lg) 0;
+    }
+    .frequency-btn {
+      padding: 0.75rem 2rem;
+      font-family: var(--font-headline);
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 2px solid var(--accent-red);
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .frequency-btn:first-child {
+      border-radius: 6px 0 0 6px;
+      border-right: none;
+    }
+    .frequency-btn:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+    .frequency-btn.active {
+      background: var(--accent-red);
+      color: #fff;
+    }
+    .frequency-btn:hover:not(.active) {
+      background: rgba(185, 28, 28, 0.15);
+    }
+
+    /* Amount grid */
+    .amount-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-sm);
+      max-width: 500px;
+      margin: var(--space-lg) auto;
+    }
+    .amount-btn {
+      padding: 1.25rem 1rem;
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--bg-elevated);
+      border: 2px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+    }
+    .amount-btn:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-2px);
+    }
+    .amount-btn.active {
+      border-color: var(--accent-red);
+      background: rgba(185, 28, 28, 0.1);
+      box-shadow: 0 0 0 1px var(--accent-red);
+    }
+    .amount-btn .label {
+      display: block;
+      font-size: 0.7rem;
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    /* Custom amount */
+    .custom-amount {
+      max-width: 500px;
+      margin: 0 auto var(--space-lg);
+      text-align: center;
+    }
+    .custom-amount label {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: var(--font-headline);
+    }
+    .custom-amount-input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+    .custom-amount-input:focus-within {
+      border-color: var(--accent-red);
+    }
+    .custom-amount-input span {
+      padding: 0.75rem 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--bg-elevated);
+    }
+    .custom-amount-input input {
+      flex: 1;
+      padding: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: var(--font-headline);
+      background: var(--bg-elevated);
+      border: none;
+      color: var(--text);
+      outline: none;
+      max-width: 200px;
+    }
+    .custom-amount-input input::placeholder {
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    /* CTA */
+    .donate-cta {
+      text-align: center;
+      margin: var(--space-xl) 0;
+    }
+    .donate-submit {
+      display: inline-block;
+      padding: 1rem 3rem;
+      font-family: var(--font-headline);
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--accent-red);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .donate-submit:hover {
+      background: var(--accent-red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(185, 28, 28, 0.4);
+    }
+    .donate-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .donate-note {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+    }
+
+    /* Impact section */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    .impact-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: var(--space-md);
+      text-align: center;
+      border-top: 3px solid var(--accent-red);
+    }
+    .impact-card .amount {
+      font-family: var(--font-headline);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-red);
+    }
+    .impact-card .desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .error-msg {
+      color: var(--accent-red);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .amount-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="images/logo.png" alt="Forest City Solidarity logo" width="50" height="50">
+        <span class="header__logo-text">Forest City Solidarity</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="events.html" class="nav__link">Events</a></li>
+          <li><a href="mayday.html" class="nav__link">May Day</a></li>
+          <li><a href="farhi.html" class="nav__link">Fuck Farhi</a></li>
+          <li><a href="https://fcs-qr.vercel.app" class="nav__link" target="_blank" rel="noopener noreferrer">QR</a></li>
+          <li><a href="donate.html" class="nav__link nav__link--active">Donate</a></li>
+          <li><a href="constitution.html" class="nav__link">Constitution</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+          <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </button>
+        <a href="#stay-connected" class="btn btn--primary btn--small">Stay Connected</a>
+      </div>
+      <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+      <ul class="mobile-nav__list">
+        <li><a href="/" class="mobile-nav__link">Home</a></li>
+        <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+        <li><a href="mayday.html" class="mobile-nav__link">May Day</a></li>
+        <li><a href="farhi.html" class="mobile-nav__link">Fuck Farhi</a></li>
+        <li><a href="https://fcs-qr.vercel.app" class="mobile-nav__link" target="_blank" rel="noopener noreferrer">QR</a></li>
+        <li><a href="donate.html" class="mobile-nav__link">Donate</a></li>
+        <li><a href="constitution.html" class="mobile-nav__link">Constitution</a></li>
+      </ul>
+      <div class="mobile-nav__actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+          <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </button>
+        <a href="#stay-connected" class="btn btn--primary">Stay Connected</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="donate-hero">
+      <div class="container">
+        <h1>Fund the <span class="red-underline">Fight</span></h1>
+        <p>Your donation funds mutual aid, direct action, and community defence in London, Ontario. Every dollar goes directly to supporting our community.</p>
+      </div>
+    </section>
+
+    <section class="section" style="max-width: 700px; margin: 0 auto; padding: 0 var(--space-md) var(--space-3xl);">
+      <!-- Frequency Toggle -->
+      <div class="frequency-toggle">
+        <button class="frequency-btn active" data-frequency="one-time">One-Time</button>
+        <button class="frequency-btn" data-frequency="monthly">Monthly</button>
+      </div>
+
+      <!-- Amount Grid -->
+      <div class="amount-grid">
+        <button class="amount-btn" data-amount="10">$10<span class="label" data-monthly="feeds a family">feeds a family</span></button>
+        <button class="amount-btn" data-amount="25">$25<span class="label" data-monthly="prints picket signs">prints signs</span></button>
+        <button class="amount-btn active" data-amount="50">$50<span class="label" data-monthly="funds an event">funds an event</span></button>
+        <button class="amount-btn" data-amount="100">$100<span class="label" data-monthly="sustains operations">sustains operations</span></button>
+        <button class="amount-btn" data-amount="250">$250<span class="label" data-monthly="powerful solidarity">powerful solidarity</span></button>
+        <button class="amount-btn" data-amount="500">$500<span class="label" data-monthly="major impact">major impact</span></button>
+      </div>
+
+      <!-- Custom Amount -->
+      <div class="custom-amount">
+        <label>Or enter a custom amount</label>
+        <div class="custom-amount-input">
+          <span>CAD $</span>
+          <input type="number" id="custom-amount" min="1" step="1" placeholder="0">
+        </div>
+        <p class="error-msg" id="error-msg"></p>
+      </div>
+
+      <!-- Submit -->
+      <div class="donate-cta">
+        <button class="donate-submit" id="donate-btn">Donate $50 Now</button>
+        <p class="donate-note">Secure payment via Stripe. Tax receipts available upon request.</p>
+      </div>
+    </section>
+
+    <!-- What Your Donation Funds -->
+    <section class="section" style="padding-bottom: var(--space-3xl);">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--space-lg);">What Your Donation Funds</h2>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="amount">$10</div>
+            <div class="desc">Provides supplies for a mutual aid delivery — food, hygiene kits, or emergency supplies for someone in need.</div>
+          </div>
+          <div class="impact-card">
+            <div class="amount">$25</div>
+            <div class="desc">Prints picket signs, banners, and flyers for a direct action or rally.</div>
+          </div>
+          <div class="impact-card">
+            <div class="amount">$50</div>
+            <div class="desc">Covers venue costs and food for a community workshop or organizing meeting.</div>
+          </div>
+          <div class="impact-card">
+            <div class="amount">$100</div>
+            <div class="desc">Helps sustain our ongoing operations — legal support, communications, and rapid response coordination.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Forest City Solidarity. <a href="mailto:info@forestcitysolidarity.xyz">info@forestcitysolidarity.xyz</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.querySelectorAll('[data-theme-toggle]');
+    const html = document.documentElement;
+    const storedTheme = localStorage.getItem('fcs-theme');
+    if (storedTheme) {
+      html.setAttribute('data-theme', storedTheme);
+    }
+    themeToggle.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('fcs-theme', next);
+      });
+    });
+
+    // Mobile nav
+    const navToggle = document.querySelector('[data-nav-toggle]');
+    const mobileNav = document.querySelector('[data-mobile-nav]');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        mobileNav.classList.toggle('is-open');
+      });
+    }
+
+    // Donate logic
+    let selectedAmount = 50;
+    let frequency = 'one-time';
+
+    const freqBtns = document.querySelectorAll('.frequency-btn');
+    const amountBtns = document.querySelectorAll('.amount-btn');
+    const customInput = document.getElementById('custom-amount');
+    const donateBtn = document.getElementById('donate-btn');
+    const errorMsg = document.getElementById('error-msg');
+
+    function updateButton() {
+      const label = frequency === 'monthly' ? 'Monthly' : 'Now';
+      donateBtn.textContent = `Donate $${selectedAmount} ${label}`;
+    }
+
+    function updateLabels() {
+      amountBtns.forEach(btn => {
+        const label = btn.querySelector('.label');
+        if (frequency === 'monthly') {
+          label.textContent = label.dataset.monthly || 'monthly';
+        } else {
+          label.textContent = label.dataset.monthly.replace('sustains operations', 'sustains operations')
+        }
+      });
+    }
+
+    freqBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        freqBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        frequency = btn.dataset.frequency;
+        updateButton();
+      });
+    });
+
+    amountBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        amountBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedAmount = parseInt(btn.dataset.amount);
+        customInput.value = '';
+        errorMsg.style.display = 'none';
+        updateButton();
+      });
+    });
+
+    customInput.addEventListener('input', () => {
+      const val = parseInt(customInput.value);
+      if (val > 0) {
+        amountBtns.forEach(b => b.classList.remove('active'));
+        selectedAmount = val;
+        updateButton();
+      }
+      errorMsg.style.display = 'none';
+    });
+
+    donateBtn.addEventListener('click', async () => {
+      const amount = parseInt(customInput.value) || selectedAmount;
+      if (!amount || amount < 1) {
+        errorMsg.textContent = 'Please select or enter an amount.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+      if (amount > 100000) {
+        errorMsg.textContent = 'Maximum donation is $100,000.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      donateBtn.disabled = true;
+      donateBtn.textContent = 'Processing...';
+
+      try {
+        const resp = await fetch('https://fcs-donate.vercel.app/api/create-checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ amount, frequency, currency: 'cad' })
+        });
+
+        if (!resp.ok) {
+          const err = await resp.json();
+          throw new Error(err.error || 'Something went wrong');
+        }
+
+        const session = await resp.json();
+        window.location.href = session.url;
+      } catch (err) {
+        errorMsg.textContent = err.message;
+        errorMsg.style.display = 'block';
+        donateBtn.disabled = false;
+        updateButton();
+      }
+    });
+  </script>
+</body>
+</html>

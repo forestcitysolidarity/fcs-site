@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="May Day London 2026 - Workers unite! A weekend of solidarity, celebration, and direct action. Apr 25 - May 3, London, Ontario.">
+  <meta name="theme-color" content="#1A1A1A">
+  <meta property="og:title" content="May Day London 2026">
+  <meta property="og:description" content="Workers unite! A weekend of solidarity, celebration, and direct action. Apr 25 - May 3, London, Ontario.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maydaylondon.xyz">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="May Day London 2026">
+  <meta name="twitter:description" content="Workers unite! A weekend of solidarity, celebration, and direct action.">
+  <title>May Day London 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    /* May Day Hero */
+    .mayday-hero {
+      background: linear-gradient(135deg, #c41e3a 0%, #8b0000 60%, #1A1A1A 100%);
+      padding: 5rem 0 4rem;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .mayday-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+    }
+    .mayday-hero__kicker {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.875rem;
+      opacity: 0.9;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-body);
+    }
+    .mayday-hero__title {
+      font-family: var(--font-headline);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .mayday-hero__year {
+      font-family: var(--font-headline);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 500;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+    .mayday-hero__subtitle {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+    .mayday-hero__date {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1.125rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .mayday-hero__cta {
+      margin-top: 2rem;
+    }
+    .mayday-hero__cta a {
+      display: inline-block;
+      background: white;
+      color: #8b0000;
+      padding: 0.875rem 2.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 1.125rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .mayday-hero__cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Sections */
+    .mayday-section {
+      padding: 4rem 0;
+    }
+    .mayday-section h2 {
+      font-family: var(--font-headline);
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    .mayday-section p {
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      max-width: 700px;
+    }
+    .mayday-section--dark {
+      background: var(--bg-elevated);
+    }
+
+    /* Rally banner */
+    .rally-banner {
+      background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .rally-banner h2 {
+      font-family: var(--font-headline);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    .rally-banner p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .rally-banner .rally-date {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 1rem;
+      font-family: var(--font-headline);
+    }
+
+    /* Featured event — Luma embed */
+    .featured-event {
+      background: var(--bg-elevated);
+      border-left: 4px solid #c41e3a;
+      padding: 2rem;
+      border-radius: 4px;
+      margin: 2rem 0;
+    }
+    .featured-event__label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      color: #c41e3a;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-body);
+    }
+    .featured-event__title {
+      font-family: var(--font-headline);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+    }
+    .featured-event__meta {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .featured-event__embed {
+      border: none;
+      width: 100%;
+      min-height: 500px;
+      border-radius: 4px;
+      background: var(--bg);
+    }
+    .featured-event__cta {
+      margin-top: 1rem;
+      text-align: left;
+    }
+    .featured-event__register-btn {
+      display: inline-block;
+      background: #c41e3a;
+      color: white;
+      padding: 0.875rem 2rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: var(--font-headline);
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .featured-event__register-btn:hover {
+      background: #991b1b;
+      transform: translateY(-1px);
+    }
+    .featured-event__cta a {
+      display: inline-block;
+      background: #c41e3a;
+      color: white;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: var(--font-headline);
+      text-transform: uppercase;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .featured-event__cta a:hover {
+      background: #991b1b;
+    }
+
+    /* Events list */
+    .events-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .events-list__item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .events-list__info-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.3rem 0.75rem;
+      background: var(--red, #dc2626);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.2s;
+    }
+    .events-list__info-btn:hover {
+      background: #b91c1c;
+    }
+    .events-list__item:last-child {
+      border-bottom: none;
+    }
+    @media (max-width: 600px) {
+      .events-list__item {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+    }
+    .events-list__date {
+      font-family: var(--font-headline);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      padding-top: 0.15rem;
+    }
+    .events-list__date strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.1rem;
+    }
+    .events-list__info h3 {
+      font-family: var(--font-headline);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      text-transform: uppercase;
+    }
+    .events-list__info p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Stay Connected block */
+    .stay-connected {
+      background: var(--bg-elevated);
+      border-radius: 8px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin: 2rem 0;
+    }
+    @media (max-width: 700px) {
+      .stay-connected {
+        grid-template-columns: 1fr;
+      }
+    }
+    .stay-connected h3 {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .stay-connected p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 100%;
+    }
+    .stay-connected__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    /* Collapsible form toggle */
+    .form-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-body);
+      transition: color 0.2s;
+    }
+    .form-toggle:hover { color: var(--text); }
+    .form-toggle svg {
+      transition: transform 0.2s;
+    }
+    .form-toggle[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+    .form-toggle-label {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Form */
+    .mayday-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .mayday-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.375rem;
+      font-size: 0.95rem;
+    }
+    .mayday-form .form-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.375rem;
+    }
+    .mayday-form input[type="text"],
+    .mayday-form input[type="email"],
+    .mayday-form input[type="tel"],
+    .mayday-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s;
+    }
+    .mayday-form input:focus,
+    .mayday-form textarea:focus {
+      outline: none;
+      border-color: #c41e3a;
+      box-shadow: 0 0 0 2px rgba(196, 30, 58, 0.2);
+    }
+    .mayday-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .mayday-form button[type="submit"] {
+      display: inline-block;
+      background: #c41e3a;
+      color: white;
+      padding: 0.875rem 2.5rem;
+      font-weight: 700;
+      font-size: 1.125rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font-headline);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .mayday-form button[type="submit"]:hover {
+      background: #991b1b;
+      transform: translateY(-1px);
+    }
+
+    /* Form success */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(22, 101, 52, 0.1);
+      border: 1px solid rgba(22, 101, 52, 0.3);
+      border-radius: 8px;
+    }
+    .form-success h3 {
+      font-family: var(--font-headline);
+      color: #166534;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="images/logo.png" alt="Forest City Solidarity logo" width="50" height="50">
+        <span class="header__logo-text">Forest City Solidarity</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="events.html" class="nav__link">Events</a></li>
+          <li><a href="mayday.html" class="nav__link nav__link--active">May Day</a></li>
+          <li><a href="farhi.html" class="nav__link">Fuck Farhi</a></li>
+          <li><a href="donate.html" class="nav__link">Donate</a></li>
+          <li><a href="https://fcs-qr.vercel.app" class="nav__link" target="_blank" rel="noopener noreferrer">QR</a></li>
+          <li><a href="constitution.html" class="nav__link">Constitution</a></li>
+        </ul>
+        <div class="nav__actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+            <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+          <a href="#stay-connected" class="btn btn--primary btn--small">Stay Connected</a>
+        </div>
+      </nav>
+      <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+      <ul class="mobile-nav__list">
+        <li><a href="/" class="mobile-nav__link">Home</a></li>
+        <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+        <li><a href="mayday.html" class="mobile-nav__link">May Day</a></li>
+        <li><a href="farhi.html" class="mobile-nav__link">Fuck Farhi</a></li>
+        <li><a href="donate.html" class="mobile-nav__link">Donate</a></li>
+        <li><a href="https://fcs-qr.vercel.app" class="mobile-nav__link" target="_blank" rel="noopener noreferrer">QR</a></li>
+        <li><a href="constitution.html" class="mobile-nav__link">Constitution</a></li>
+      </ul>
+      <div class="mobile-nav__actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+          <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </button>
+        <a href="#stay-connected" class="btn btn--primary">Stay Connected</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="mayday-hero">
+      <div class="container" style="position: relative; z-index: 1;">
+        <p class="mayday-hero__kicker">London, Ontario</p>
+        <h1 class="mayday-hero__title">May Day 2026</h1>
+        <p class="mayday-hero__subtitle">
+          Workers unite! A weekend of solidarity, celebration, and direct action in the Forest City.
+        </p>
+        <div class="mayday-hero__date">Apr 25 – May 3, 2026</div>
+        <div class="mayday-hero__cta">
+          <a href="#stay-connected">Stay Connected</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Call -->
+    <section class="mayday-section">
+      <div class="container">
+        <h2>The Call</h2>
+        <p>
+          May Day began as a commemoration of the 1886 Haymarket Riot, where workers striking for the 8-hour workday were met with violent police retaliation. Over time, it became a festival and celebration of the working class movement — marked by workers' protests, wildcat strikes, and mass mobilizations across the world.
+        </p>
+        <p>
+          This year more than ever, we need a show of force and solidarity. The London May Day Committee keeps this tradition alive by organizing a full weekend of events: rallies, workshops, fundraisers, art builds, and community gatherings.
+        </p>
+        <p>
+          We invite our constituency of organized labour, socialists, and all working people to join under the banner <strong>"Rise and Organize!"</strong> — and help build something worth showing up for.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Event: Fight to Win -->
+    <section class="mayday-section">
+      <div class="container">
+        <h2>Featured Event</h2>
+
+        <div class="featured-event">
+          <p class="featured-event__label">Saturday, May 2</p>
+          <h3 class="featured-event__title">Fight to Win! A One-Day Workshop with John Clarke</h3>
+          <p class="featured-event__meta">10:00 AM – 4:00 PM &bull; PSAC London Regional Office, 244 Pall Mall St, Suite 401 &bull; Free / PWYC</p>
+
+          <p class="featured-event__desc">John Clarke has been a leading voice in Ontario's anti-poverty and workers' movements for decades. This hands-on workshop will give you practical organizing skills — from campaign strategy to building power in your workplace and community.</p>
+          <div class="featured-event__cta" style="margin-top: 0;">
+            <a href="https://luma.com/pl14axt1" target="_blank" rel="noopener noreferrer" class="featured-event__register-btn">
+              Register — Fight to Win! with John Clarke
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rally Banner -->
+    <section class="rally-banner">
+      <div class="container">
+        <h2>International Workers' Day Rally</h2>
+        <p>Join us for the main May Day rally and march through downtown London. Stand with your neighbours, your coworkers, your community.</p>
+        <p class="rally-date">Sunday, May 3rd, 2026 — Victoria Park</p>
+        <p style="opacity: 0.8; margin-top: 0.5rem; font-size: 0.95rem;">11:00 AM — march through downtown London</p>
+      </div>
+    </section>
+
+    <!-- Events Schedule -->
+    <section class="mayday-section">
+      <div class="container">
+        <h2>Full Weekend Schedule</h2>
+        <p>Events are being added regularly. <a href="#stay-connected">Join the mailing list</a> to stay updated.</p>
+
+        <ul class="events-list">
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Sat Apr 25</strong>1:00 PM</div>
+            <div class="events-list__info">
+              <h3>Fight Ford Rally!</h3>
+              <p>Victoria Park — Stand with workers and communities under attack. Part of a broader day of action.</p>
+              <a href="https://www.instagram.com/p/forestcitysolidarity" class="events-list__info-btn" target="_blank" rel="noopener noreferrer">More Info</a>
+            </div>
+          </li>
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Sat Apr 25</strong>4:30 PM</div>
+            <div class="events-list__info">
+              <h3>Final May Day Committee Meeting</h3>
+              <p>ReImagine Co, 206 Piccadilly St — Our last planning meeting before the big weekend. Everyone welcome.</p>
+            </div>
+          </li>
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Tue Apr 28</strong>10:00 AM</div>
+            <div class="events-list__info">
+              <h3>Day of Mourning Ceremony</h3>
+              <p>OPSEU Centre, 1092 Dearness Dr — Honouring workers killed and injured on the job. Joint event with the London and District Labour Council.</p>
+              <a href="https://canadianlabour.ca/events/day-of-mourning-ceremonies-2026/" class="events-list__info-btn" target="_blank" rel="noopener noreferrer">More Info</a>
+            </div>
+          </li>
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Wed Apr 29</strong>TBA</div>
+            <div class="events-list__info">
+              <h3>Artful Gathering: Banners &amp; Signs</h3>
+              <p>ReImagine Co, 206 Piccadilly St — Come make signs and banners for the weekend. All skill levels welcome. Art supplies provided.</p>
+            </div>
+          </li>
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Fri May 1</strong>4:00 PM</div>
+            <div class="events-list__info">
+              <h3>Tolpuddle Award Ceremony</h3>
+              <p>Peace Park — Annual labour recognition event with the London and District Labour Council.</p>
+              <a href="https://londonlabour.ca/events/tolpuddle-martyrs-award/" class="events-list__info-btn" target="_blank" rel="noopener noreferrer">More Info</a>
+            </div>
+          </li>
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Fri May 1</strong>7:00 PM</div>
+            <div class="events-list__info">
+              <h3>Fundraiser for the People of Cuba</h3>
+              <p>Casa Latina, 150 Dundas St — An evening of solidarity with the Cuban people. More details coming soon.</p>
+              <a href="https://www.eventbrite.ca/e/estamos-con-cuba-a-fundraiser-for-the-cuban-people-tickets-1986721562675" class="events-list__info-btn" target="_blank" rel="noopener noreferrer">More Info</a>
+            </div>
+          </li>
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Sat May 2</strong>10:00 AM – 4:00 PM</div>
+            <div class="events-list__info">
+              <h3>Fight to Win! Workshop with John Clarke</h3>
+              <p>PSAC London Regional Office, 244 Pall Mall St, Suite 401 — Full-day popular education workshop. Free / PWYC.</p>
+              <a href="https://luma.com/pl14axt1" class="events-list__info-btn" target="_blank" rel="noopener noreferrer">Register on Luma</a>
+            </div>
+          </li>
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Sun May 3</strong>11:00 AM</div>
+            <div class="events-list__info">
+              <h3>International Workers' Day Rally</h3>
+              <p>Victoria Park — The main event. Rally and march through downtown London. All unions, groups, and workers welcome.</p>
+            </div>
+          </li>
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Sun May 3</strong>Mid-afternoon</div>
+            <div class="events-list__info">
+              <h3>Solidarity Gathering</h3>
+              <p>ReImagine Co, 206 Piccadilly St — Wind down after the rally. Food, debrief, and connection.</p>
+            </div>
+          </li>
+          <li class="events-list__item">
+            <div class="events-list__date"><strong>Sun May 3</strong>6:00 PM</div>
+            <div class="events-list__info">
+              <h3>RHYMETHiNK Show</h3>
+              <p>Honeydip Bar, 621 Dundas St — Close out the weekend with spoken word and hip-hop. More details coming soon.</p>
+              <a href="https://www.instagram.com/p/DXazoGllceH/" class="events-list__info-btn" target="_blank" rel="noopener noreferrer">More Info</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Stay Connected -->
+    <section class="mayday-section" id="stay-connected">
+      <div class="container">
+        <h2>Stay Connected</h2>
+        <p>Get updates on May Day events, volunteer opportunities, and ways to get involved.</p>
+
+        <div class="stay-connected">
+          <div>
+            <h3>Join the Mailing List</h3>
+            <p>Stay in the loop with May Day London updates. We don't send too many emails — only the important stuff.</p>
+            <div class="stay-connected__actions">
+              <a href="https://lists.riseup.net/www/info/mayday-london" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+                Join May Day Mailing List
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3>Want to Help Organize?</h3>
+            <p>If you want to plug in — host an event, volunteer on the day, help with planning — fill out the form below and we'll be in touch.</p>
+            <div class="stay-connected__actions">
+              <button class="btn btn--secondary" type="button" id="form-toggle-btn">
+                <svg id="form-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px;transition:transform 0.2s"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <span id="form-toggle-label">Fill out the volunteer form</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Volunteer form — hidden by default -->
+        <div id="get-involved-form" style="display: none; margin-top: 1.5rem;">
+          <h3 style="font-family: var(--font-headline); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 1rem;">Volunteer with the May Day Committee</h3>
+          <div class="mayday-form">
+            <form action="https://formsubmit.co/hello@maydaylondon.xyz" method="POST" id="signup-form">
+              <input type="hidden" name="_subject" value="May Day London 2026 - Volunteer">
+              <input type="hidden" name="_captcha" value="true">
+              <input type="hidden" name="_next" value="https://forestcitysolidarity.xyz/mayday.html#thank-you">
+              <input type="text" name="_honey" style="display:none">
+
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+              <label for="phone">Phone Number</label>
+              <p class="form-hint">Optional</p>
+              <input type="tel" id="phone" name="phone" placeholder="(519) 555-0123">
+
+              <label for="organization">Union and/or Organization</label>
+              <p class="form-hint">Optional — list any union, group, or organization you're affiliated with</p>
+              <input type="text" id="organization" name="organization" placeholder="e.g. CUPE Local 101, London Food Not Bombs, etc.">
+
+              <label for="involvement">How would you like to get involved?</label>
+              <textarea id="involvement" name="involvement" placeholder="Planning events, performing, volunteering on the day, helping with logistics, hosting a workshop..."></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="form-success" id="thank-you">
+          <h3>Solidarity!</h3>
+          <p>Thanks for signing up. We'll be in touch soon about how to get involved with May Day London 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="mayday-section mayday-section--dark" style="text-align: center; padding: 3rem 0;">
+      <div class="container">
+        <p style="font-size: 1.125rem; margin-bottom: 0.5rem;">
+          Questions? Reach out at <a href="mailto:hello@maydaylondon.xyz" style="color: #c41e3a; font-weight: 600;">hello@maydaylondon.xyz</a>
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Organized by the May Day London Committee &bull; A <a href="/" style="color: var(--text-muted); text-decoration: underline;">Forest City Solidarity</a> initiative
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner" style="flex-direction: column; gap: 0.5rem; text-align: center;">
+        <p><a href="mailto:hello@maydaylondon.xyz">hello@maydaylondon.xyz</a></p>
+        <p class="footer__tagline">Workers of the world, unite!</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Show thank-you message if redirected back after form submit
+    if (window.location.hash === '#thank-you') {
+      var form = document.getElementById('signup-form');
+      var thanks = document.getElementById('thank-you');
+      if (form) form.style.display = 'none';
+      if (thanks) {
+        thanks.style.display = 'block';
+        thanks.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Volunteer form toggle
+    (function() {
+      var btn = document.getElementById('form-toggle-btn');
+      var form = document.getElementById('get-involved-form');
+      var icon = document.getElementById('form-toggle-icon');
+      var label = document.getElementById('form-toggle-label');
+      if (!btn || !form) return;
+      btn.addEventListener('click', function() {
+        var isOpen = form.style.display === 'block';
+        form.style.display = isOpen ? 'none' : 'block';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+        label.textContent = isOpen ? 'Fill out the volunteer form' : 'Hide volunteer form';
+        if (!isOpen) form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    })();
+  </script>
+</body>
+</html>

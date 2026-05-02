@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fuck Farhi Campaign - London's biggest slumlord is hoarding our city. It's time to fight back. Join Forest City Solidarity's campaign for housing justice.">
+  <meta name="theme-color" content="#B91C1C">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fuck Farhi - Forest City Solidarity">
+  <meta property="og:description" content="London's biggest slumlord is hoarding our city. It's time to fight back.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fcsolidarity.ca/farhi">
+  <meta property="og:image" content="https://fcsolidarity.ca/images/social/fuck-farhi-share.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fuck Farhi - Forest City Solidarity">
+  <meta name="twitter:description" content="London's biggest slumlord is hoarding our city. It's time to fight back.">
+
+  <title>Fuck Farhi - Forest City Solidarity</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="images/logo.png" alt="Forest City Solidarity logo" width="50" height="50">
+        <span class="header__logo-text">Forest City Solidarity</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="events.html" class="nav__link">Events</a></li>
+          <li><a href="farhi.html" class="nav__link nav__link--active">Fuck Farhi</a></li>
+          <li><a href="donate.html" class="nav__link">Donate</a></li>
+          <li><a href="https://fcs-qr.vercel.app" class="nav__link" target="_blank" rel="noopener noreferrer">QR</a></li>
+          <li><a href="constitution.html" class="nav__link">Constitution</a></li>
+        </ul>
+        <div class="nav__actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+            <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </button>
+          <a href="/#join" class="btn btn--primary btn--small">Join</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Navigation Toggle -->
+      <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+      <ul class="mobile-nav__list">
+        <li><a href="/" class="mobile-nav__link">Home</a></li>
+        <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+        <li><a href="mayday.html" class="mobile-nav__link">May Day</a></li>
+        <li><a href="farhi.html" class="mobile-nav__link">Fuck Farhi</a></li>
+        <li><a href="donate.html" class="mobile-nav__link">Donate</a></li>
+        <li><a href="https://fcs-qr.vercel.app" class="mobile-nav__link" target="_blank" rel="noopener noreferrer">QR</a></li>
+        <li><a href="constitution.html" class="mobile-nav__link">Constitution</a></li>
+      </ul>
+      <div class="mobile-nav__actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+          <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+          <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </button>
+        <a href="/#join" class="btn btn--primary">Join</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- Campaign Hero -->
+    <section class="campaign-hero">
+      <div class="container">
+        <h1>Fuck Farhi</h1>
+        <p class="campaign-hero__subtitle">
+          London's biggest slumlord is hoarding our city. It's time to fight back.
+        </p>
+      </div>
+    </section>
+
+    <!-- Campaign Update -->
+    <section class="campaign-update">
+      <div class="container">
+        <div class="campaign-update__content">
+          <h2>December 27 Was a Huge Success</h2>
+          <p>
+            Our protest at Richmond & Dufferin brought Londoners together to stand up against property hoarding and demand accountability. The energy was incredible and the message was clear: we won't accept empty buildings while people sleep outside.
+          </p>
+          <p>
+            We're now planning next steps for the campaign. If you'd like to get involved, join our mailing list to stay in the loop on upcoming actions and meetings.
+          </p>
+          <a href="/#join" class="btn btn--primary btn--large">Join Our Mailing List</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem - Stats Section -->
+    <section class="stats" id="problem">
+      <div class="container">
+        <h2 class="text-center">The Problem</h2>
+        <div class="stats__grid">
+
+          <div class="stat">
+            <p class="stat__number">59%</p>
+            <p class="stat__label">of downtown vacant commercial space owned by Farhi</p>
+          </div>
+
+          <div class="stat">
+            <p class="stat__number">31.4%</p>
+            <p class="stat__label">London's office vacancy rate — highest in Canada</p>
+          </div>
+
+          <div class="stat">
+            <p class="stat__number">10,000+</p>
+            <p class="stat__label">acres controlled by Farhi across Ontario</p>
+          </div>
+
+          <div class="stat">
+            <p class="stat__number">25%</p>
+            <p class="stat__label">increase in London homelessness (2022-2024)</p>
+          </div>
+
+        </div>
+
+        <p class="stats__description">
+          While Shmuel Farhi sits on thousands of empty properties waiting for land values to rise, Londoners are sleeping on the streets. Property hoarding isn't just bad business — it's a weapon against our community.
+        </p>
+      </div>
+    </section>
+
+    <!-- The Demand Section -->
+    <section class="demand" id="demand">
+      <div class="container">
+        <div class="demand__content">
+          <h2 class="demand__title">Use It or Lose It</h2>
+          <p class="demand__description">
+            We demand an end to property hoarding. Vacant buildings must be taxed heavily, occupied within mandatory timelines, or expropriated for social housing.
+          </p>
+
+          <blockquote class="demand__quote">
+            "Empty buildings while people sleep outside is a policy choice. We can make a different choice."
+          </blockquote>
+
+          <div class="mt-lg">
+            <h3>Our Demands:</h3>
+            <ul style="text-align: left; max-width: 500px; margin: var(--space-md) auto;">
+              <li style="margin-bottom: var(--space-sm);">Aggressive vacant property taxes that escalate yearly</li>
+              <li style="margin-bottom: var(--space-sm);">Mandatory occupancy timelines with real enforcement</li>
+              <li style="margin-bottom: var(--space-sm);">Expropriation of chronically vacant properties for social housing</li>
+              <li style="margin-bottom: var(--space-sm);">Transparency on all property holdings by major landlords</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Take Action Section -->
+    <section class="action" id="action">
+      <div class="container">
+        <h2 class="text-center">Take Action</h2>
+
+        <div class="action__card">
+          <p class="action__date">December 27, 2025</p>
+          <h3 class="action__location">RICHMOND & DUFFERIN</h3>
+          <p class="action__time">Time: 1 to 2 pm</p>
+          <p class="action__description">
+            Join us for a demonstration outside one of Farhi's many properties. Bring your signs, your neighbours, and your outrage.
+          </p>
+          <a href="https://forestcityevents.xyz/event/fuck-farhi-protest" class="btn btn--primary btn--large" target="_blank" rel="noopener">More Info</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Shareable Graphics Section -->
+    <section class="graphics" id="graphics">
+      <div class="container">
+        <h2>Spread the Word</h2>
+        <p class="text-muted">Download and share these graphics on social media to help build the movement.</p>
+
+        <div class="graphics__grid">
+
+          <div class="graphic-card">
+            <div class="graphic-card__image" aria-label="Fuck Farhi campaign graphic 1">
+              <img src="images/FF0.png" alt="Fuck Farhi protest flyer - December 27th at 620 Richmond St">
+            </div>
+            <div class="graphic-card__actions">
+              <a href="images/FF0.png" download class="graphic-card__btn">Download</a>
+              <button class="graphic-card__btn" onclick="shareGraphic('images/FF0.png')">Share</button>
+            </div>
+          </div>
+
+          <div class="graphic-card">
+            <div class="graphic-card__image" aria-label="Fuck Farhi campaign graphic 2">
+              <img src="images/FF1.png" alt="Fuck Farhi - December 27, 2025 - Vacancy Tax Now">
+            </div>
+            <div class="graphic-card__actions">
+              <a href="images/FF1.png" download class="graphic-card__btn">Download</a>
+              <button class="graphic-card__btn" onclick="shareGraphic('images/FF1.png')">Share</button>
+            </div>
+          </div>
+
+          <div class="graphic-card">
+            <div class="graphic-card__image" aria-label="Fuck Farhi campaign graphic 3">
+              <img src="images/FF2.png" alt="Fuck Farhi - December 27, 2025 - Vacancy Tax Now">
+            </div>
+            <div class="graphic-card__actions">
+              <a href="images/FF2.png" download class="graphic-card__btn">Download</a>
+              <button class="graphic-card__btn" onclick="shareGraphic('images/FF2.png')">Share</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
+      <div class="container">
+        <p>Can't make the action? You can still fight back.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center;">
+          <a href="mailto:fcs-news-subscribe@lists.riseup.net?subject=subscribe" class="btn btn--primary btn--large">Join Our Mailing List</a>
+          <a href="https://twitter.com/intent/tweet?text=London%27s%20biggest%20landlord%20is%20hoarding%20our%20city.%20It%27s%20time%20to%20fight%20back.%20Join%20Londoners%20as%20we%20protest%20from%201%20to%202%20pm%20on%20December%2027%20at%20Richmond%20%26%20Dufferin.%20%23FuckFarhi%20https%3A%2F%2Ffuckfarhi.xyz" class="btn btn--secondary btn--large" target="_blank" rel="noopener noreferrer">Share on X</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <p><a href="mailto:forestcitysolidarity@riseup.net">forestcitysolidarity@riseup.net</a></p>
+          <div class="social-links" style="margin-top: 0.5rem;">
+            <a href="https://facebook.com/forestcitysolidarity" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com/forestcitysolidarity" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <p class="footer__tagline">Built with solidarity</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Simple share function
+    function shareGraphic(imageUrl) {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Fuck Farhi - Forest City Solidarity',
+          text: 'London\'s biggest slumlord is hoarding our city. It\'s time to fight back.',
+          url: window.location.href
+        }).catch(console.error);
+      } else {
+        // Fallback: copy URL to clipboard
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          alert('Link copied to clipboard!');
+        }).catch(function() {
+          alert('Share this page: ' + window.location.href);
+        });
+      }
+    }
+  </script>
+
+  <!-- Tally Script (uncomment when Tally forms are set up)
+  <script>
+    var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}
+  </script>
+  -->
+</body>
+</html>
