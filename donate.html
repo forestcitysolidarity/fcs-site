@@ -299,6 +299,14 @@
   <main id="main">
     <section class="donate-hero">
       <div class="container">
+        <div id="thank-you-msg" style="display:none; background: rgba(22,101,52,0.15); border: 1px solid var(--accent-green); border-radius: 8px; padding: var(--space-lg); margin-bottom: var(--space-lg); text-align: center;">
+          <h2 style="color: #4ade80; margin-bottom: 0.5rem;">Thank you for your donation!</h2>
+          <p style="color: var(--text-muted);">Your generosity powers mutual aid, direct action, and community defence in London. We'll send a receipt to your email. Solidarity forever.</p>
+        </div>
+        <div id="cancelled-msg" style="display:none; background: rgba(185,28,28,0.1); border: 1px solid var(--accent-red); border-radius: 8px; padding: var(--space-lg); margin-bottom: var(--space-lg); text-align: center;">
+          <h2 style="color: var(--accent-red); margin-bottom: 0.5rem;">Donation cancelled</h2>
+          <p style="color: var(--text-muted);">No worries — your donation wasn't processed. You can try again whenever you're ready.</p>
+        </div>
         <h1>Fund the <span class="red-underline">Fight</span></h1>
         <p>Your donation funds mutual aid, direct action, and community defence in London, Ontario. Every dollar goes directly to supporting our community.</p>
       </div>
@@ -453,6 +461,16 @@
       }
       errorMsg.style.display = 'none';
     });
+
+    // Show thank you / cancelled messages
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('success') === 'true') {
+      document.getElementById('thank-you-msg').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (params.get('cancelled') === 'true') {
+      document.getElementById('cancelled-msg').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     donateBtn.addEventListener('click', async () => {
       const amount = parseInt(customInput.value) || selectedAmount;
