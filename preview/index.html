@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theme preview | Forest City Solidarity</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --bg: #f6f5f2; --text: #1a1a1a; --muted: #555; --line: #ddd; }
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  header { padding: 1.5rem 1rem 0.5rem; max-width: 1400px; margin: 0 auto; }
+  h1 { margin: 0 0 0.25rem; font-size: 1.6rem; }
+  p { color: var(--muted); margin: 0 0 0.5rem; }
+  nav { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0; }
+  nav button { font: 600 0.95rem system-ui; padding: 0.45rem 0.9rem; border: 2px solid #1a1a1a; background: #fff; cursor: pointer; }
+  nav button[aria-pressed="true"] { background: #1a1a1a; color: #fff; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: 0 1rem 3rem; max-width: 1400px; margin: 0 auto; }
+  figure { margin: 0; background: #fff; border: 1px solid var(--line); padding: 0.75rem; }
+  figcaption { font-weight: 700; margin-bottom: 0.5rem; }
+  figcaption small { display: block; font-weight: 400; color: var(--muted); }
+  img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+  .w390 img { max-width: 390px; margin: 0 auto; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Forest City Solidarity: three themes, one site</h1>
+  <p>Same pages and content, three stylesheets. Pick a page and a screen size to compare A, B and C side by side.</p>
+  <p>To browse the real pages in a theme, open any page with <code>?theme=a</code>, <code>?theme=b</code> or <code>?theme=c</code> on the end. Screenshots were taken in a sandbox without Google Fonts, so headings show fallback fonts; Oswald, Source Serif and Space Grotesk load on the live site.</p>
+  <nav aria-label="Page">
+    <button data-page="index" aria-pressed="true">Home</button>
+    <button data-page="events" aria-pressed="false">Events</button>
+    <button data-page="donate" aria-pressed="false">Donate</button>
+  </nav>
+  <nav aria-label="Width">
+    <button data-width="390" aria-pressed="true">Phone (390px)</button>
+    <button data-width="1280" aria-pressed="false">Desktop (1280px)</button>
+  </nav>
+</header>
+<div class="grid" id="grid"></div>
+<script>
+  var state = { page: 'index', width: '390' };
+  var names = { a: 'A: Picket', b: 'B: Bulletin', c: 'C: Network' };
+  var notes = { a: 'Poster style, red and black, scrolling meeting strip', b: 'Community newspaper, warm paper, serif, "this month" column', c: 'Calendar first, forest green and yellow, map as the main picture' };
+  function draw() {
+    var g = document.getElementById('grid');
+    g.className = 'grid w' + state.width;
+    g.innerHTML = ['a', 'b', 'c'].map(function (t) {
+      var src = state.page + '-' + t + '-' + state.width + '.png';
+      return '<figure><figcaption>' + names[t] + '<small>' + notes[t] + '</small></figcaption><a href="' + src + '"><img src="' + src + '" alt="' + names[t] + ' theme, ' + state.page + ' page at ' + state.width + 'px" loading="lazy"></a></figure>';
+    }).join('');
+  }
+  document.querySelectorAll('nav button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var key = b.dataset.page ? 'page' : 'width';
+      state[key] = b.dataset[key];
+      b.parentNode.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      draw();
+    });
+  });
+  draw();
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/*
+ * THE THEME SWITCH
+ * Change the one letter below to switch the whole site:
+ *   theme-a.css  = A "Picket"   (poster style, red and black)
+ *   theme-b.css  = B "Bulletin" (community newspaper, warm paper, serif)
+ *   theme-c.css  = C "Network"  (calendar first, forest green and yellow)
+ *
+ * To try a theme without changing anything, add ?theme=b to any page address.
+ * ?theme=reset goes back to the one set here.
+ */
+@import url("theme-a.css");
