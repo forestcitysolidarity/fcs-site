@@ -1,0 +1,76 @@
+/* THEME A: "Picket". Poster style, red and black, scrolling meeting strip. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap");
+
+:root {
+  --bg: #121212;
+  --surface: #1c1c1c;
+  --text: #f6f1e9;
+  --muted: #c8c0b4;          /* 10.3:1 on --bg */
+  --line: #3b3b3b;
+  --accent: #b91c1c;         /* white on this = 6.5:1 */
+  --on-accent: #ffffff;
+  --accent-text: #f87171;    /* 6.9:1 on --bg */
+  --header-bg: #000000;
+  --hero-bg: #000000;
+  --hero-text: #ffffff;
+  --font-head: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --head-transform: uppercase;
+  --radius: 0;
+  --border-w: 2px;
+  --focus: #facc15;
+}
+
+.site-header { border-bottom: 4px solid var(--accent); }
+
+/* Poster hero: huge stacked type with a red slab */
+.hero { position: relative; overflow: hidden; border-bottom: 0; }
+.hero::after {
+  content: ""; position: absolute; right: -6vw; top: 0; bottom: 0; width: 34vw; max-width: 420px;
+  background: var(--accent); transform: skewX(-12deg); opacity: 0.9; z-index: 0;
+}
+.hero .container { position: relative; z-index: 1; }
+.hero__title { font-size: clamp(2.8rem, 13vw, 7rem); line-height: 0.92; max-width: 11ch; }
+.hero__tagline { color: #fca5a5; }
+.hero__logo { filter: grayscale(1) contrast(1.2); }
+@media (max-width: 719px) { .hero::after { width: 100%; height: 10px; top: auto; right: 0; transform: none; max-width: none; } }
+
+/* Scrolling meeting strip */
+.strip { border-top: 3px solid #000; border-bottom: 3px solid #000; }
+.strip__track { animation: fcs-scroll 38s linear infinite; padding: 0.85rem 0; font-family: var(--font-head); text-transform: uppercase; font-size: 1.15rem; letter-spacing: 0.03em; }
+.strip__track:hover { animation-play-state: paused; }
+.strip__copy { display: contents; }
+.strip__label { background: #000; color: #fff; padding: 0.1rem 0.6rem; font-family: var(--font-body); }
+.strip__item::before { content: "\2605"; margin-right: 0.9rem; opacity: 0.8; }
+@keyframes fcs-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .strip__track { width: auto; flex-wrap: wrap; white-space: normal; padding: 0.85rem var(--gutter); gap: 0.5rem 1.5rem; }
+  .strip__copy { display: none; }
+}
+
+/* Panels as posters */
+.panel { border-color: #2f2f2f; }
+.kicker { color: #fca5a5; }
+.event__date { font-family: var(--font-head); }
+.fund-teaser { background: var(--accent); color: #fff; border-color: var(--accent); }
+.fund-teaser .kicker { color: #fff; }
+.fund-teaser .btn--ghost { color: #fff; }
+.map-teaser .map-art { background: #0a0a0a; }
+.join { border: 3px solid var(--accent); }
+
+@media (min-width: 900px) {
+  .home-grid {
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-areas:
+      "upcoming map"
+      "upcoming fund"
+      "about about"
+      "join join";
+    align-items: start;
+  }
+  .upcoming { grid-area: upcoming; }
+  .map-teaser { grid-area: map; }
+  .fund-teaser { grid-area: fund; }
+  .about { grid-area: about; }
+  .join { grid-area: join; }
+}
